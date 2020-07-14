@@ -5,6 +5,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Distancia extends StatelessWidget {
   GoogleMapController mapController;
+
+  //posicion debe llamarse igual al key que pasé como parámetro
   final Position posicion;
 
   Distancia({Key key, @required this.posicion}) : super(key: key);

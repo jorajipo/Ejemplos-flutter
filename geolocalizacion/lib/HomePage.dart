@@ -41,6 +41,7 @@ class _HomePageState extends State<HomePage> {
             FlatButton(
               child: Text("ir a pantalla de Mapa"),
               onPressed: () {
+                //Abro pantalla pasando como parámetro el objeto Position
                 Navigator.push(context, MaterialPageRoute(builder: (context) => Distancia(posicion: _currentPosition,)));
               },
             ),
