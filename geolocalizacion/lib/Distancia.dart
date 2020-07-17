@@ -12,6 +12,7 @@ class Distancia extends StatelessWidget {
   Distancia({Key key, @required this.posicion}) : super(key: key);
 
   void _onMapCreated(GoogleMapController controller) {
+    //Guarda los datos de la Api de Google Maps
     mapController = controller;
   }
 
@@ -20,7 +21,7 @@ class Distancia extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Maps Sample App'),
+          title: Text('Aplicación de ejemplo de Maps'),
           backgroundColor: Colors.green[700],
         ),
         body: GoogleMap(

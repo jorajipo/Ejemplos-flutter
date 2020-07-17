@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
 
       setState(() {
         _currentAddress =
-        "${place.locality}, ${place.administrativeArea},${place.postalCode}, ${place.country}";
+        "${place.name},${place.locality}, ${place.administrativeArea},${place.postalCode}, ${place.country}";
       });
     } catch (e) {
       print(e);
