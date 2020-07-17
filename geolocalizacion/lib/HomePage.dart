@@ -18,6 +18,9 @@ class _HomePageState extends State<HomePage> {
   //En esta cadena guardamos la dirección
   String _currentAddress;
 
+
+  double _distanciaEnMetros;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,10 +35,12 @@ class _HomePageState extends State<HomePage> {
             if (_currentPosition != null)
               //Text("LAT: ${_currentPosition.latitude}, LNG: ${_currentPosition.longitude}"),
             Text(_currentAddress),
+            Text("Distancia de tu ubicación a la Unitec es $_distanciaEnMetros"),
             FlatButton(
               child: Text("Obtener ubicación"),
               onPressed: () {
                 _getCurrentLocation();
+                _obtenerDistancia();
               },
             ),
             FlatButton(
@@ -84,6 +89,10 @@ class _HomePageState extends State<HomePage> {
     } catch (e) {
       print(e);
     }
+  }
+
+  _obtenerDistancia() async {
+    _distanciaEnMetros = await geolocator.distanceBetween(_currentPosition.latitude,_currentPosition.longitude,21.1331177,-101.6943133);
   }
 
 }
